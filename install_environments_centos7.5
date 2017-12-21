@@ -1,0 +1,37 @@
+sudo yum -y install git
+sudo yum -y install zsh
+sudo yum -y install epel-release
+sudo yum -y -y groupinstall development
+sudo yum -y -y install https://centos7.iuscommunity.org/ius-release.rpm
+sudo yum -y install htop
+
+
+vim .zshrc
+alias LS="ls"
+alias clc="clear"
+alias add="git add"
+alias sta="git status"
+
+
+---------install python and packages--------
+sudo yum -y install python-pip
+sudo yum -y install ipython
+sudo pip install psutil
+
+
+----------install python3 and packages----------
+----------only for ubri1------------------------
+sudo yum -y install python36u
+sudo yum -y install python36u-pip
+sudo yum install  python36u-devel.x86_64
+sudo pip3.6 install ConfigSpace==0.3.8
+sudo pip3.6 install scikit-learn
+sudo pip3.6 install numpy
+
+
+yum install pcre-devel.x86_64
+download swig3.0
+./configure
+make 
+make install
+sudo pip3.6 install pyrfr==0.5.0
