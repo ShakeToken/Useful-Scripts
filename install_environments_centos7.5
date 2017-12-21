@@ -1,12 +1,12 @@
 sudo yum -y install git
 sudo yum -y install zsh
 sudo yum -y install epel-release
-sudo yum -y -y groupinstall development
-sudo yum -y -y install https://centos7.iuscommunity.org/ius-release.rpm
+sudo yum -y groupinstall development
+sudo yum -y install https://centos7.iuscommunity.org/ius-release.rpm
 sudo yum -y install htop
 sudo yum install python-devel
 
-
+sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 vim .zshrc
 alias LS="ls"
 alias clc="clear"
@@ -21,7 +21,7 @@ sudo pip install psutil
 
 
 ----------install python3 and packages----------
-----------only for ubri1------------------------
+----------only for those who need python3.6 and pyrfr>=0.5.0------------------------
 sudo yum -y install python36u
 sudo yum -y install python36u-pip
 sudo yum install  python36u-devel.x86_64
@@ -29,10 +29,14 @@ sudo pip3.6 install ConfigSpace==0.3.8
 sudo pip3.6 install scikit-learn
 sudo pip3.6 install numpy
 
-
-yum install pcre-devel.x86_64
-download swig3.0
+For pyrfr
+1. unistall swig first
+2. yum install pcre-devel.x86_64
+3. download swig3.0
+wget http://prdownloads.sourceforge.net/swig/swig-3.0.12.tar.gz
+4. 
 ./configure
 make 
 make install
+sudo ln -s /usr/local/bin/swig /usr/bin/swig
 sudo pip3.6 install pyrfr==0.5.0
